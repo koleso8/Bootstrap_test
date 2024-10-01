@@ -1,14 +1,28 @@
+import { useState } from 'react';
 import {
   Button,
   Container,
+  Form,
+  FormCheck,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormText,
   Modal,
+  ModalBody,
   ModalHeader,
+  ModalTitle,
   Nav,
   Navbar,
 } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const Navibar = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <Container>
@@ -40,8 +54,28 @@ const Navibar = () => {
           </Navbar.Collapse>
         </Navbar>
       </Container>
-      <Modal show={show} onHide={handleClose}>
-        <ModalHeader></ModalHeader>
+      <Modal show={show} onHide={handleClose} className="">
+        <ModalHeader closeButton>
+          <ModalTitle>Log In</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
+          <Form>
+            <FormGroup controlId="formBasicEmail">
+              <FormLabel>Email Address</FormLabel>
+              <FormControl type="email" placeholder="Enter email" />
+              <FormText className="text-muted">
+                We`ll never share ypur email with anyone else
+              </FormText>
+            </FormGroup>
+            <FormGroup controlId="formBasicPassword">
+              <FormLabel>Password</FormLabel>
+              <FormControl type="password" placeholder="Enter password" />
+            </FormGroup>
+            <FormGroup controlId="formBasicCheckbox">
+              <FormCheck type="checkbox" label="Remember me" />
+            </FormGroup>
+          </Form>
+        </ModalBody>
       </Modal>
     </>
   );
