@@ -54,9 +54,9 @@ const Navibar = () => {
           </Navbar.Collapse>
         </Navbar>
       </Container>
-      <Modal show={show} onHide={handleClose} className="">
+      <Modal show={show} onHide={handleClose} data-bs-theme="dark">
         <ModalHeader closeButton>
-          <ModalTitle>Log In</ModalTitle>
+          <ModalTitle className="text-light">Log In</ModalTitle>
         </ModalHeader>
         <ModalBody>
           <Form>
@@ -67,12 +67,16 @@ const Navibar = () => {
                 We`ll never share ypur email with anyone else
               </FormText>
             </FormGroup>
-            <FormGroup controlId="formBasicPassword">
+            <FormGroup controlId="formBasicPassword" className="mb-4">
               <FormLabel>Password</FormLabel>
               <FormControl type="password" placeholder="Enter password" />
             </FormGroup>
             <FormGroup controlId="formBasicCheckbox">
-              <FormCheck type="checkbox" label="Remember me" />
+              <FormCheck
+                type="checkbox"
+                label="Remember me"
+                className="text-light"
+              />
             </FormGroup>
           </Form>
         </ModalBody>
