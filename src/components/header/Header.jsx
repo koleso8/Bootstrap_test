@@ -1,11 +1,10 @@
-import { CardHeader } from 'react-bootstrap';
 import Navibar from './Navibar';
 
 const Header = () => {
   return (
-    <>
+    <div className="bg-dark">
       <Navibar />
-    </>
+    </div>
   );
 };
 

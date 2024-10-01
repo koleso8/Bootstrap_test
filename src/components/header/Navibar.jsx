@@ -1,27 +1,49 @@
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import {
+  Button,
+  Container,
+  Modal,
+  ModalHeader,
+  Nav,
+  Navbar,
+} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const Navibar = () => {
   return (
-    <Container>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand> WebLogo</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-md-auto gap-4">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/users">Users</NavLink>
-            <NavLink to="/about">About</NavLink>
-          </Nav>
-          <Nav>
-            <Button variant="primary" className="me-3">
-              Log In
-            </Button>
-            <Button variant="primary">Sign Out</Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </Container>
+    <>
+      <Container>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <NavLink to="/" className="navbar-brand">
+            WebLogo
+          </NavLink>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-md-auto gap-4 text-white-50">
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
+              <NavLink to="/users" className="nav-link">
+                Users
+              </NavLink>
+              <NavLink to="/about" className="nav-link">
+                About
+              </NavLink>
+            </Nav>
+            <Nav className="gap-3">
+              <Button variant="secondary" onClick={handleShow}>
+                Log In
+              </Button>
+              <Button variant="secondary" onClick={handleShow}>
+                Sign Out
+              </Button>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </Container>
+      <Modal show={show} onHide={handleClose}>
+        <ModalHeader></ModalHeader>
+      </Modal>
+    </>
   );
 };
 
