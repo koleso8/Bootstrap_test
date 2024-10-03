@@ -1,6 +1,8 @@
+import { Container } from 'react-bootstrap';
+import Jumbotron from '../components/Jumbotron';
 
 const About = () => {
-  return <div>about</div>;
+  return <Jumbotron />;
 };
 
 export default About;
