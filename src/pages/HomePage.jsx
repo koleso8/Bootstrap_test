@@ -1,6 +1,7 @@
 import Slider from '../components/Slider';
 import RowsCards from '../components/RowsCards';
 import Jumbotron from '../components/Jumbotron';
+import Benefits from '../components/Benefits';
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Slider />
       <RowsCards />
       <Jumbotron />
+      <Benefits />
     </div>
   );
 };
